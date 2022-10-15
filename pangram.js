@@ -4,11 +4,5 @@
 //
 
 export const isPangram = (txt) => {
-  txt = txt.toLowerCase();
-  var result;
-  for (let i = 97; i <= 122; i++) {
-    result = txt.includes(String.fromCharCode(i));
-    if (!result) break;
-  }
-  return result;
+  return new Set(txt.toUpperCase().match(/[A-Z]/g)).size === 26;
 };
